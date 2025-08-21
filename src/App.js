@@ -57,6 +57,11 @@ function checkLocalStorageAndRedirect(navigate) {
   const userid = localStorage.getItem('userid');
   if (userid !== null) {
     navigate('/shop'); // Redirect to dashboard if id exists in localStorage
+  } else {
+    if (window.location.pathname != '/') {
+      navigate('/'); // Redirect to dashboard if id exists in localStorage
+      // console.log('dont go back')
+    }
   }
 }
 
